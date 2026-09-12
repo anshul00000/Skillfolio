@@ -1,0 +1,20 @@
+{
+  "name": "skillfolio",
+  "version": "1.0.0",
+  "description": "mern stack portfolio website to upload projects and user details etc .",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anshul00000/portfolio-_with_mern.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/anshul00000/portfolio-_with_mern/issues"
+  },
+  "homepage": "https://github.com/anshul00000/portfolio-_with_mern#readme"
+}

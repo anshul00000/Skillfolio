@@ -1,0 +1,257 @@
+/* Comments Toggle Button */
+.comments-toggle-btn i {
+  color: #667eea;
+}
+
+.comments-toggle-btn:hover i {
+  color: #764ba2;
+}
+
+.comment-count {
+  font-size: 0.85rem;
+}
+
+.comments-container {
+  margin-top: 1rem;
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Comment Form */
+.comment-form {
+  margin-bottom: 1.5rem;
+}
+
+.comment-input-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: #f9f9f9;
+  border: 2px solid #e5e5e5;
+  border-radius: 12px;
+  padding: 0.75rem;
+  transition: all 0.3s;
+}
+
+.comment-input-wrapper:focus-within {
+  border-color: #667eea;
+  background: #fff;
+}
+
+.comment-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.comment-input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  font-size: 0.95rem;
+  outline: none;
+  color: #333;
+}
+
+.comment-input::placeholder {
+  color: #999;
+}
+
+.comment-submit-btn {
+  width: 36px;
+  height: 36px;
+  border: none;
+  background: #667eea;
+  color: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+  flex-shrink: 0;
+}
+
+.comment-submit-btn:hover:not(:disabled) {
+  background: #764ba2;
+  transform: scale(1.1);
+}
+
+.comment-submit-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Login Prompt */
+.comment-login-prompt {
+  text-align: center;
+  padding: 2rem;
+  background: #f9f9f9;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+}
+
+.comment-login-prompt i {
+  font-size: 2rem;
+  color: #667eea;
+  margin-bottom: 0.5rem;
+}
+
+.comment-login-prompt p {
+  color: #666;
+  margin: 0;
+}
+
+/* Comments List */
+.comments-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-height: 400px;
+  overflow-y: auto;
+  padding-right: 0.5rem;
+}
+
+.comments-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.comments-list::-webkit-scrollbar-thumb {
+  background: #667eea;
+  border-radius: 3px;
+}
+
+.comments-list::-webkit-scrollbar-track {
+  background: #f0f0f0;
+  border-radius: 3px;
+}
+
+.comment-item {
+  display: flex;
+  gap: 0.75rem;
+  padding: 1rem;
+  background: #f9f9f9;
+  border-radius: 12px;
+  transition: all 0.3s;
+  position: relative;
+}
+
+.comment-item:hover {
+  background: #f0f0f0;
+}
+
+.comment-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.comment-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.comment-username {
+  font-weight: 700;
+  color: #333;
+  font-size: 0.9rem;
+}
+
+.comment-time {
+  font-size: 0.8rem;
+  color: #999;
+}
+
+.comment-text {
+  margin: 0;
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  word-wrap: break-word;
+}
+
+.comment-delete-btn {
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: transparent;
+  color: #f5576c;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+  flex-shrink: 0;
+}
+
+.comment-delete-btn:hover:not(:disabled) {
+  background: #f5576c;
+  color: #fff;
+}
+
+.comment-delete-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* No Comments */
+.no-comments {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: #999;
+}
+
+.no-comments i {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  opacity: 0.5;
+}
+
+.no-comments p {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .comment-avatar {
+    width: 32px;
+    height: 32px;
+  }
+
+  .comment-input-wrapper {
+    padding: 0.5rem;
+  }
+
+  .comment-submit-btn {
+    width: 32px;
+    height: 32px;
+  }
+
+  .comment-item {
+    padding: 0.75rem;
+  }
+
+  .comments-list {
+    max-height: 300px;
+  }
+}

@@ -1,0 +1,199 @@
+/* Hide footer on resume page */
+body:has(#resume-page) footer,
+body:has(.resume-preview-container) footer {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+/* Disable ALL AOS animations on resume pages */
+.resume-preview-container [data-aos],
+.resume-preview-container [data-aos] *,
+#resume-page [data-aos],
+#resume-page [data-aos] *,
+.resume-page [data-aos],
+.resume-page [data-aos] * {
+  opacity: 1 !important;
+  transform: none !important;
+  transition-property: none !important;
+  animation: none !important;
+  pointer-events: auto !important;
+}
+
+/* Ensure resume page content is always visible */
+#resume-page,
+.resume-preview-container {
+  position: relative !important;
+  z-index: 100 !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* Force visibility without breaking display */
+#resume-page > *,
+.resume-preview-container > *,
+.resume-preview-wrapper,
+.resume-page {
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.resume-preview-container {
+  min-height: 100vh;
+  background: white !important;
+  padding: 20px;
+  padding-top: 100px; /* Account for navbar */
+  padding-bottom: 60px;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  overflow-x: hidden;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.resume-preview-actions {
+  max-width: 900px;
+  margin: 0 auto 20px;
+  display: flex !important;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  background: white !important;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 10;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.btn-back,
+.btn-download {
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.btn-back {
+  background: white;
+  color: #374151;
+  border: 1px solid #d1d5db;
+}
+
+.btn-back:hover {
+  background: #f9fafb;
+  transform: translateX(-2px);
+}
+
+.btn-download {
+  background: #3b82f6;
+  color: white;
+}
+
+.btn-download:hover:not(:disabled) {
+  background: #2563eb;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+.btn-download:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.resume-preview-wrapper {
+  max-width: 900px;
+  margin: 0 auto 40px;
+  background: white !important;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: visible;
+  position: relative;
+  z-index: 5;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.resume-page {
+  background: white !important;
+  min-height: 1122px; /* A4 height at 96 DPI */
+  padding: 0;
+  position: relative;
+  z-index: 5;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.resume-page > * {
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.resume-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  font-size: 24px;
+  color: #6b7280;
+}
+
+/* Print styles */
+@media print {
+  .resume-preview-actions {
+    display: none;
+  }
+
+  .resume-preview-container {
+    background: white;
+    padding: 0;
+  }
+
+  .resume-preview-wrapper {
+    box-shadow: none;
+    border-radius: 0;
+    max-width: 100%;
+  }
+
+  .resume-page {
+    padding: 0;
+    box-shadow: none;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .resume-preview-container {
+    padding: 10px;
+  }
+
+  .resume-preview-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn-back,
+  .btn-download {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .resume-preview-wrapper {
+    transform: scale(0.9);
+    transform-origin: top center;
+  }
+}

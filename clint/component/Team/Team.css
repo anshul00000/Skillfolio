@@ -1,0 +1,84 @@
+/* If font file placed in public/, reference from root */
+@font-face {
+  font-family: "MyFont";
+  src: url("/Rejouice-Headline.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Use clamp for responsive sizes instead of huge 20vw */
+.team_title {
+  font-size: clamp(3rem, 5vw, 5rem); /* adjusts between 2rem and 6rem */
+  color: rgb(84, 84, 84);
+  font-family: "MyFont", system-ui, sans-serif;
+  margin: 0 0 2rem 0;
+  text-align: right;
+  margin-right: 200px;
+}
+
+/* layout */
+.Team_box {
+  padding: 4rem; /* reduce a bit from 10vw unless intentional */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5rem;
+  align-items: center;
+  justify-content: center;
+  /* background-color: aqua; */
+}
+
+/* wrapper must be inline-block (or block) and relative for pseudo-element */
+.member_img {
+  width: 300px;
+  /* height: 200px; */
+  position: relative;
+  /* display: inline-block; */
+  background-color: rgba(0, 8, 255, 0.087);
+  padding: 20px;
+  z-index: 5;
+
+
+}
+
+.member_img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+   transform: scale(1);
+ transition:0.2s ease-in-out; 
+}
+.member_img:hover img{
+    transform: scale(1.7);
+    border-radius: 10px;
+}
+
+/* bigger background that grows around equally */
+.member_img::before {
+  content: "";
+  position: absolute;
+  top: -5%;   /* equal spacing above */
+  left: -5%;  /* equal spacing left */
+  width: 110%;
+  height: 110%;
+  background-color: rgba(137, 43, 226, 0);
+  border:1px solid rgb(23, 38, 112);
+  z-index: -1;
+  border-radius: 14px;
+  transform: rotate(5deg);
+  transition: 0.1s ;
+}
+
+
+.name_div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.name{
+    margin-top: 20px;
+  font-family: "MyFont", system-ui, sans-serif;
+  font-weight: 100;
+  /* letter-spacing: 5px; */
+}
